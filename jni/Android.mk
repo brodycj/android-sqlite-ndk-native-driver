@@ -7,7 +7,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)  
 
 LOCAL_LDLIBS := -llog
-LOCAL_MODULE := sqlc-native-driver
+LOCAL_MODULE := sqlc-ndk-native-driver
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../sqlite-amalgamation
 
