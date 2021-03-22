@@ -12,9 +12,9 @@ regen:
 ndkbuild:
 	rm -rf lib libs
 	ndk-build
-	zip sqlite-native-driver-libs.zip libs/*/*
+	zip sqlite-ndk-native-driver-libs.zip libs/*/*
 	mv libs lib
-	jar cf sqlite-native-driver.jar lib
+	jar cf sqlite-ndk-native-driver.jar lib
 
 clean:
 	rm -rf obj lib libs *.jar *.zip java/io/liteglue/*.orig
