@@ -1,20 +1,27 @@
-# Android sqlite native driver - cordova-sqlite-storage native driver branch
+# Android sqlite native driver (...)
 
-Provides Android NDK build of sqlite3 (<http://sqlite.org/>, public domain) with a low-level JNI interface accessible from a single (singleton) single `SQLiteNative` class.
+Provides Android NDK build of sqlite3 (<http://sqlite.org/>, public domain) with a low-level JNI interface accessible from some static methods.
 
-Based on [SQLiteGlue-core](https://github.com/sqlg/SQLiteGlue-core), which may be adapted for other Java platforms.
+Based on:
 
-by Christopher J. Brody aka Chris Brody mailto: <chris@brody.consulting>
+- [`liteglue / Android-sqlite-native-driver`](https://github.com/liteglue/Android-sqlite-native-driver)
+- [`sqlg / SQLiteGlue-core`](https://github.com/sqlg/SQLiteGlue-core)
+
+by Christopher J. Brody aka Chris Brody mailto: <chris.brody+brodybits@gmail.com>
+
+with some complex API response type enhancements by Luis Silva of OutSystems (luis dot silva at outsystems dot com)
 
 License: UNLICENSE (public domain).
 
 ## About
 
-Android-sqlite-native-driver provides the following items:
-- single `SQLiteNative` class with native Java interface to an important subset of sqlite3 C functions
+provides the following items:
+
+- `SQLiteNative` class with native Java interface to an important subset of sqlite3 C functions
+- `SQLiteResponse` class with complex API response type
 - automatic build of `sqlite-native-driver.jar` and `sqlite-native-driver-libs.zip` with sqlite3 component for major Android NDK targets (`armeabi-v7a` / `x86` / `x86_64` / `arm64-v8a`), with sqlite3 component
 
-This is accomplished by using [GlueGen](http://jogamp.org/gluegen/www/) around a simple wrapper C module.
+This was accomplished with some help from using [GlueGen](http://jogamp.org/gluegen/www/) around a simple wrapper C module.
 
 This project is meant to help build a higher-level sqlite interface library, with the JNI layer completely isolated.
 
@@ -22,7 +29,7 @@ Minimum API level: android-22 (Android 5.1)
 
 **NOTE:** This project references the `gluegentools` and `sqlite-amalgamation` subprojects, which are resolved by: $ `make init` (as described below).
 
-**WARNING:** The sqlite database and statement handles that are returned by the `SQLiteNative` library functions are raw C pointer values (with `0x100000000` added). If someone uses a database or statement handle that is not valid, or no longer valid with the `SQLiteNative` library the behavior is undefined (may crash, for example). It is NOT recommended to use the API directly without understanding of how this library works internally.
+**WARNING:** The SQLite database and statement handles that are returned in `SQLiteResponse` are raw C pointer values. If someone uses a database or statement handle that is not valid, or no longer valid then the behavior would be undefined (may crash, for example). It is **not** recommended to use the API directly without understanding of how this library works internally.
 
 ## SQLite build information
 
