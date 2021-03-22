@@ -9,12 +9,12 @@
 /*   Java->C glue code:
  *   Java package: io.liteglue.SQLiteNDKNativeDriver
  *    Java method: SQLiteNativeResponse sqlc_api_db_open(int sqlc_api_version, java.lang.String filename, int flags)
- *     C function: sqlc_handle_ct* sqlc_api_db_open(int sqlc_api_version, const char *  filename, int flags);
+ *     C function: sqlc_native_response_ct* sqlc_api_db_open(int sqlc_api_version, const char *  filename, int flags);
  */
 JNIEXPORT jobject JNICALL 
 Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1api_1db_1open__ILjava_lang_String_2I(JNIEnv *env, jclass _unused, jint sqlc_api_version, jstring filename, jint flags) {
   const char* _strchars_filename = NULL;
-  sqlc_handle_ct* _res;
+  sqlc_native_response_ct* _res;
   if ( NULL != filename ) {
     _strchars_filename = (*env)->GetStringUTFChars(env, filename, (jboolean*)NULL);
   if ( NULL == _strchars_filename ) {
@@ -107,12 +107,12 @@ Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1db_1last_1insert_1rowid__J(JNIEnv *
 /*   Java->C glue code:
  *   Java package: io.liteglue.SQLiteNDKNativeDriver
  *    Java method: SQLiteNativeResponse sqlc_db_open(java.lang.String filename, int flags)
- *     C function: sqlc_handle_ct* sqlc_db_open(const char *  filename, int flags);
+ *     C function: sqlc_native_response_ct* sqlc_db_open(const char *  filename, int flags);
  */
 JNIEXPORT jobject JNICALL 
 Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1db_1open__Ljava_lang_String_2I(JNIEnv *env, jclass _unused, jstring filename, jint flags) {
   const char* _strchars_filename = NULL;
-  sqlc_handle_ct* _res;
+  sqlc_native_response_ct* _res;
   if ( NULL != filename ) {
     _strchars_filename = (*env)->GetStringUTFChars(env, filename, (jboolean*)NULL);
   if ( NULL == _strchars_filename ) {
@@ -139,12 +139,12 @@ Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1db_1open__Ljava_lang_String_2I(JNIE
 /*   Java->C glue code:
  *   Java package: io.liteglue.SQLiteNDKNativeDriver
  *    Java method: SQLiteNativeResponse sqlc_db_prepare_st(long db, java.lang.String sql)
- *     C function: sqlc_handle_ct* sqlc_db_prepare_st(sqlc_handle_t db, const char *  sql);
+ *     C function: sqlc_native_response_ct* sqlc_db_prepare_st(sqlc_handle_t db, const char *  sql);
  */
 JNIEXPORT jobject JNICALL 
 Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1db_1prepare_1st__JLjava_lang_String_2(JNIEnv *env, jclass _unused, jlong db, jstring sql) {
   const char* _strchars_sql = NULL;
-  sqlc_handle_ct* _res;
+  sqlc_native_response_ct* _res;
   if ( NULL != sql ) {
     _strchars_sql = (*env)->GetStringUTFChars(env, sql, (jboolean*)NULL);
   if ( NULL == _strchars_sql ) {

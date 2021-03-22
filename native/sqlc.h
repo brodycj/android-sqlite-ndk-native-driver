@@ -43,21 +43,21 @@ typedef sqlc_long_t sqlc_handle_t;
 typedef struct {
     int result;
     sqlc_handle_t handle;
-}sqlc_handle_ct;
+}sqlc_native_response_ct;
 
 /* RECOMMENDED (alt 1): Use this call at startup to check Java/native library match
  * (returns SQLC_RESULT_OK [0] if OK, other value in case of mismatch) */
 int sqlc_api_version_check(int sqlc_api_version);
 
 /* RECOMMENDED (alt 2): Check Java/native library match and open database handle */
-sqlc_handle_ct* sqlc_api_db_open(int sqlc_api_version, const char *filename, int flags);
+sqlc_native_response_ct* sqlc_api_db_open(int sqlc_api_version, const char *filename, int flags);
 
-sqlc_handle_ct* sqlc_db_open(const char *filename, int flags);
+sqlc_native_response_ct* sqlc_db_open(const char *filename, int flags);
 
 // FUTURE TBD (???):
 //sqlc_handle_t sqlc_db_open_vfs(const char *filename, int flags, const char *vfs);
 
-sqlc_handle_ct* sqlc_db_prepare_st(sqlc_handle_t db, const char *sql);
+sqlc_native_response_ct* sqlc_db_prepare_st(sqlc_handle_t db, const char *sql);
 
 sqlc_long_t sqlc_db_last_insert_rowid(sqlc_handle_t db);
 int sqlc_db_total_changes(sqlc_handle_t db);
