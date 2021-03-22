@@ -8,7 +8,7 @@
 
 /*   Java->C glue code:
  *   Java package: io.liteglue.SQLiteNDKNativeDriver
- *    Java method: SQLiteResponse sqlc_api_db_open(int sqlc_api_version, java.lang.String filename, int flags)
+ *    Java method: SQLiteNativeResponse sqlc_api_db_open(int sqlc_api_version, java.lang.String filename, int flags)
  *     C function: sqlc_handle_ct* sqlc_api_db_open(int sqlc_api_version, const char *  filename, int flags);
  */
 JNIEXPORT jobject JNICALL 
@@ -28,7 +28,7 @@ Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1api_1db_1open__ILjava_lang_String_2
     (*env)->ReleaseStringUTFChars(env, filename, _strchars_filename);
   }
 
-  jclass class = (*env)->FindClass(env,"io/liteglue/SQLiteResponse");
+  jclass class = (*env)->FindClass(env,"io/liteglue/SQLiteNativeResponse");
   jmethodID constructor = (*env)->GetMethodID(env, class, "<init>", "(IJ)V");
   jobject instance = (*env)->NewObject(env, class, constructor, _res->result, _res->handle);
   
@@ -106,7 +106,7 @@ Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1db_1last_1insert_1rowid__J(JNIEnv *
 
 /*   Java->C glue code:
  *   Java package: io.liteglue.SQLiteNDKNativeDriver
- *    Java method: SQLiteResponse sqlc_db_open(java.lang.String filename, int flags)
+ *    Java method: SQLiteNativeResponse sqlc_db_open(java.lang.String filename, int flags)
  *     C function: sqlc_handle_ct* sqlc_db_open(const char *  filename, int flags);
  */
 JNIEXPORT jobject JNICALL 
@@ -126,7 +126,7 @@ Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1db_1open__Ljava_lang_String_2I(JNIE
     (*env)->ReleaseStringUTFChars(env, filename, _strchars_filename);
   }
 
-  jclass class = (*env)->FindClass(env,"io/liteglue/SQLiteResponse");
+  jclass class = (*env)->FindClass(env,"io/liteglue/SQLiteNativeResponse");
   jmethodID constructor = (*env)->GetMethodID(env, class, "<init>", "(IJ)V");
   jobject instance = (*env)->NewObject(env, class, constructor, _res->result, _res->handle);
 
@@ -138,7 +138,7 @@ Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1db_1open__Ljava_lang_String_2I(JNIE
 
 /*   Java->C glue code:
  *   Java package: io.liteglue.SQLiteNDKNativeDriver
- *    Java method: SQLiteResponse sqlc_db_prepare_st(long db, java.lang.String sql)
+ *    Java method: SQLiteNativeResponse sqlc_db_prepare_st(long db, java.lang.String sql)
  *     C function: sqlc_handle_ct* sqlc_db_prepare_st(sqlc_handle_t db, const char *  sql);
  */
 JNIEXPORT jobject JNICALL 
@@ -158,7 +158,7 @@ Java_io_liteglue_SQLiteNDKNativeDriver_sqlc_1db_1prepare_1st__JLjava_lang_String
     (*env)->ReleaseStringUTFChars(env, sql, _strchars_sql);
   }
 
-  jclass class = (*env)->FindClass(env,"io/liteglue/SQLiteResponse");
+  jclass class = (*env)->FindClass(env,"io/liteglue/SQLiteNativeResponse");
   jmethodID constructor = (*env)->GetMethodID(env, class, "<init>", "(IJ)V");
   jobject instance = (*env)->NewObject(env, class, constructor, _res->result, _res->handle);
 

@@ -18,7 +18,7 @@ License: UNLICENSE (public domain).
 provides the following items:
 
 - `SQLiteNDKNativeDriver` class with native Java interface to an important subset of sqlite3 C functions
-- `SQLiteResponse` class with complex API response type
+- `SQLiteNativeResponse` class with complex API response type
 - automatic build of `sqlite-native-driver.jar` and `sqlite-native-driver-libs.zip` with sqlite3 component for major Android NDK targets (`armeabi-v7a` / `x86` / `x86_64` / `arm64-v8a`), with sqlite3 component
 
 This was accomplished with some help from using [GlueGen](http://jogamp.org/gluegen/www/) around a simple wrapper C module.
@@ -29,7 +29,7 @@ Minimum API level: android-22 (Android 5.1)
 
 **NOTE:** This project references the `gluegentools` and `sqlite-amalgamation` subprojects, which are resolved by: $ `make init` (as described below).
 
-**WARNING:** The SQLite database and statement handles that are returned in `SQLiteResponse` are raw C pointer values. If someone uses a database or statement handle that is not valid, or no longer valid then the behavior would be undefined (may crash, for example). It is **not** recommended to use the API directly without understanding of how this library works internally.
+**WARNING:** The SQLite database and statement handles that are returned in `SQLiteNativeResponse` are raw C pointer values. If someone uses a database or statement handle that is not valid, or no longer valid then the behavior would be undefined (may crash, for example). It is **not** recommended to use the API directly without understanding of how this library works internally.
 
 ## SQLite build information
 
