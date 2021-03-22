@@ -24,7 +24,7 @@ int sqlc_api_version_check(int sqlc_api_version)
 sqlc_native_response_ct* sqlc_api_db_open(int sqlc_api_version, const char *filename, int flags)
 {
   if (sqlc_api_version != SQLC_API_VERSION) {
-    sqlc_native_response_ct* resp = malloc(sizeof(sqlc_native_response_ct));
+    sqlc_native_response_ct * resp = malloc(sizeof(sqlc_native_response_ct));
     resp->result = SQLC_RESULT_ERROR;
     resp->handle = 0;
     return resp;
