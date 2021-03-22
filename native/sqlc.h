@@ -1,5 +1,5 @@
 /* API version to check: */
-#define SQLC_API_VERSION 3
+#define SQLC_API_VERSION 4
 
 /* Export some important sqlite open flags to the Java interface (VFS not supported): */
 #define SQLC_OPEN_READONLY      0x00001

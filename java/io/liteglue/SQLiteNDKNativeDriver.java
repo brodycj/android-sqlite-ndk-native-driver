@@ -9,7 +9,7 @@ package io.liteglue;
 
 public class SQLiteNDKNativeDriver {
 
-  public static final int SQLC_API_VERSION = 3;
+  public static final int SQLC_API_VERSION = 4;
   public static final int SQLC_OPEN_READONLY = 0x00001;
   public static final int SQLC_OPEN_READWRITE = 0x00002;
   public static final int SQLC_OPEN_CREATE = 0x00004;
