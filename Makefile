@@ -17,5 +17,5 @@ ndkbuild:
 	jar cf sqlite-native-driver.jar lib
 
 clean:
-	rm -rf obj lib libs sqlite-native-driver.jar *.zip java/io/liteglue/*.orig
+	rm -rf obj lib libs *.jar *.zip java/io/liteglue/*.orig
 
