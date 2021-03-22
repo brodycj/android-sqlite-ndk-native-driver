@@ -1,5 +1,5 @@
 /* API version to check: */
-#define SQLC_API_VERSION 2
+#define SQLC_API_VERSION 3
 
 /* Export some important sqlite open flags to the Java interface (VFS not supported): */
 #define SQLC_OPEN_READONLY      0x00001
@@ -56,14 +56,6 @@ sqlc_handle_ct* sqlc_db_open(const char *filename, int flags);
 
 // FUTURE TBD (???):
 //sqlc_handle_t sqlc_db_open_vfs(const char *filename, int flags, const char *vfs);
-
-// FUTURE TBD (???) for sqlcipher:
-//  int sqlc_db_key_bytes(sqlc_handle_t db, unsigned char *key_bytes, int num_bytes);
-//  int sqlc_db_rekey_bytes(sqlc_handle_t db, unsigned char *key_bytes, int num_bytes);
-
-int sqlc_db_key_native_string(sqlc_handle_t db, char *key_string);
-// FUTURE TBD (???) for sqlcipher:
-//  int sqlc_db_rekey_string_native(sqlc_handle_t db, char *key_string);
 
 sqlc_handle_ct* sqlc_db_prepare_st(sqlc_handle_t db, const char *sql);
 
