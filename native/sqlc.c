@@ -6,6 +6,10 @@
 
 #include "sqlite3.h"
 
+#include "sqlite3_regexp.h"
+
+#include "sqlite3_base64.h"
+
 #ifdef SQLC_KEEP_ANDROID_LOG
 // ref: http://www.ibm.com/developerworks/opensource/tutorials/os-androidndk/index.html
 #define MYLOG(...) __android_log_print(ANDROID_LOG_VERBOSE, "sqlc", __VA_ARGS__)
@@ -38,6 +42,7 @@ sqlc_native_response_ct* sqlc_db_open(const char *filename, int flags)
   sqlc_native_response_ct *resp;
   sqlite3 *d1;
   int r1;
+  const char * err;
 
   MYLOG("db_open %s %d", filename, flags);
 
@@ -45,7 +50,14 @@ sqlc_native_response_ct* sqlc_db_open(const char *filename, int flags)
 
   MYLOG("db_open %s result %d ptr %p", filename, r1, d1);
 
+  if (r1 != 0) return -r1;
+
   sqlite3_db_config(d1, SQLITE_DBCONFIG_DEFENSIVE, 1, NULL);
+
+  // TBD IGNORE result:
+  sqlite3_regexp_init(d1, &err);
+
+  sqlite3_base64_init(d1);
 
   resp = malloc (sizeof (sqlc_native_response_ct));
   resp->result = (r1 == 0) ? 0 : -r1;
