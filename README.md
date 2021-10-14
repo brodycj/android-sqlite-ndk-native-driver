@@ -1,6 +1,6 @@
 # Android SQLite NDK native driver
 
-Provides Android NDK build of sqlite3 (<http://sqlite.org/>, public domain) with a low-level JNI interface accessible from static methods of `SQLiteNDKNativeDriver` class.
+Provides Android NDK build of sqlite3 (<http://sqlite.org/>, public domain) with a low-level JNI interface accessible from static methods of `SQLiteNDKNativeDriver` class. Intended for use with: [`brodybits / android-sqlite-native-ndk-connector`](https://github.com/brodybits/android-sqlite-native-ndk-connector)
 
 Based on:
 
@@ -19,7 +19,7 @@ provides the following items:
 
 - `SQLiteNDKNativeDriver` class with native Java interface to an important subset of sqlite3 C functions
 - `SQLiteNativeResponse` class with complex API response type
-- automatic build of `sqlite-native-driver.jar` and `sqlite-native-driver-libs.zip` with sqlite3 component for major Android NDK targets (`armeabi-v7a` / `x86` / `x86_64` / `arm64-v8a`), with sqlite3 component
+- automatic build of `sqlite-ndk-native-driver.jar` and `sqlite-ndk-native-driver-libs.zip` with sqlite3 component for major Android NDK targets (`armeabi-v7a` / `x86` / `x86_64` / `arm64-v8a`), with sqlite3 component
 
 This was accomplished with some help from using [GlueGen](http://jogamp.org/gluegen/www/) around a simple wrapper C module.
 
@@ -103,5 +103,4 @@ $ `make regen`
 
 # Testing
 
-Tested with [Android-sqlite-connector](https://github.com/liteglue/Android-sqlite-connector).
-
+Tested with: [`brodybits / android-sqlite-native-ndk-connector`](https://github.com/brodybits/android-sqlite-native-ndk-connector)
