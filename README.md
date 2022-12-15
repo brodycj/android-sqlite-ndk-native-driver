@@ -1,4 +1,4 @@
-# Android SQLite NDK native driver
+# Android SQLite storage NDK native driver
 
 Provides Android NDK build of sqlite3 (<http://sqlite.org/>, public domain) with a low-level JNI interface accessible from static methods of `SQLiteNDKNativeDriver` class. Intended for use with: [`brodybits / android-sqlite-native-ndk-connector`](https://github.com/brodybits/android-sqlite-native-ndk-connector)
 
