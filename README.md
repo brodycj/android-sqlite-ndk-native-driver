@@ -25,7 +25,7 @@ This was accomplished with some help from using [GlueGen](http://jogamp.org/glue
 
 This project is meant to help build a higher-level sqlite interface library, with the JNI layer completely isolated.
 
-Minimum API level: android-22 (Android 5.1)
+Minimum API level: android-24 (Android 7.0)
 
 **NOTE:** This project references the `gluegentools` and `sqlite-amalgamation` subprojects, which are resolved by: $ `make init` (as described below).
 
