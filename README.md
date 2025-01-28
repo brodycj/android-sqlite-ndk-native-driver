@@ -35,7 +35,7 @@ Minimum API level: android-22 (Android 5.1)
 
 ### SQLite version
 
-    3.32.3
+    3.40.0
 
 ### android-ndk version notes
 
